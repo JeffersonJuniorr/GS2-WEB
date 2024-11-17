@@ -1,16 +1,69 @@
-import {Outlet} from 'react-router-dom'
-import Home from "./routes/Hone.jsx"
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import Sidebar from "./components/Slidebar.jsx";
+import Login from "./routes/Login.jsx";
+import Cadastrar from "./routes/Cadastrar.jsx";
+import Solucao from "./routes/Solucao.jsx";
+import Home from "./routes/Hone.jsx";
+import Nav from "./components/Nav.jsx";
+import Footer from "./components/Footer.jsx";
+import Error from "./routes/Error.jsx";
 
-import Footer from "./components/Footer.jsx"
-function App() {
-
-
+function Modal({ children, onClose }) {
   return (
-    <>
-    <Footer/>
-    <Home/>
-    </>
-  )
+    <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center z-50">
+      <div className="relative bg-white rounded shadow-md max-w-md w-full mx-auto">
+        <button
+          onClick={onClose}
+          className="absolute z-10 top-2 right-6 text-gray-500 hover:text-gray-800 text-3xl"
+        >
+          &times;
+        </button>
+        {children}
+      </div>
+    </div>
+  );
 }
 
-export default App
+function App() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const closeModal = () => navigate("/");
+
+  return (
+    <div>
+      <Nav />
+      <div className="flex h-screen bg-gray-50">
+        <Sidebar />
+        <div className="flex flex-col flex-1">
+          <Routes>
+            
+            <Route path="/" element={<Home />} />
+            
+            <Route path="/solucao" element={<Solucao />} />
+            
+            <Route path="/sobre" element={<div>Sobre Nós (adicione o componente aqui)</div>} />
+            
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </div>
+      </div>
+      <Footer />
+
+   
+      {location.pathname === "/login" && (
+        <Modal onClose={closeModal}>
+          <Login />
+        </Modal>
+      )}
+      {location.pathname === "/cadastrar" && (
+        <Modal onClose={closeModal}>
+          <Cadastrar />
+        </Modal>
+      )}
+    </div>
+  );
+}
+
+export default App;
