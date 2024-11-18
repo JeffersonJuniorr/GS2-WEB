@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from "react-router-dom";
-//import Sidebar from "./components/Slidebar.jsx";
+// import Sidebar from "./components/Slidebar.jsx";
 import Login from "./routes/Login.jsx";
 import Cadastrar from "./routes/Cadastrar.jsx";
 import Solucao from "./routes/Solucao.jsx";
@@ -8,7 +8,7 @@ import Home from "./routes/Hone.jsx";
 import Nav from "./components/Nav.jsx";
 import Footer from "./components/Footer.jsx";
 import Error from "./routes/Error.jsx";
-import Sobre from "./routes/Sobre.jsx"
+import Sobre from "./routes/Sobre.jsx";
 
 function Modal({ children, onClose }) {
   return (
@@ -32,24 +32,29 @@ function App() {
 
   const closeModal = () => navigate("/");
 
+  // Condição para verificar se é a página de erro
+  const isErrorPage = location.pathname === "/404" || location.pathname === "*";
+
   return (
-    <div className="flex flex-col min-h-screen"> 
-      <Nav />
-      <div className="flex flex-1"> 
-        
+    <div className="flex flex-col min-h-screen">
+      {/* Renderiza a Nav e Footer apenas para rotas válidas */}
+      {location.pathname !== "/404" && location.pathname !== "*" && <Nav />}
+      
+      <div className="flex flex-1">
         <main className="flex-1 bg-gray-50">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/solucao" element={<Solucao />} />
             <Route path="/sobre" element={<Sobre />} />
-            <Route path="*" element={<Error />} />
+            <Route path="*" element={<Error />} /> {/* Página de erro para rotas inválidas */}
           </Routes>
         </main>
       </div>
-      <Footer />
-
-      {/*<Slidebar/>*/}
       
+      {/* Renderiza o Footer apenas se não for a página de erro */}
+      {location.pathname !== "/404" && location.pathname !== "*" && <Footer />}
+
+      {/* Modals */}
       {location.pathname === "/login" && (
         <Modal onClose={closeModal}>
           <Login />
