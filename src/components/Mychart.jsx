@@ -159,16 +159,17 @@ export const Mychart = () => {
 
   return (
     <div className='border'>
-      <div className="flex space-x-4 mb-4 pt-3 pl-3">
-        <button onClick={() => setSelectedTime('24h')} className="p-2 bg-blue-500 text-white rounded-xl">24h</button>
-        <button onClick={() => setSelectedTime('7d')} className="p-2 bg-green-500 text-white rounded-xl">7d</button>
-        <button onClick={() => setSelectedTime('30d')} className="p-2 bg-orange-500 text-white rounded-xl">30d</button>
-        <button onClick={() => setSelectedTime('all')} className="p-2 bg-gray-500 text-white rounded-xl">Todos</button>
-      </div>
+  <div className="flex space-x-4 mb-4 pt-3 pl-3">
+    <button onClick={() => setSelectedTime('24h')} className="p-2 bg-blue-500 text-white rounded-xl">24h</button>
+    <button onClick={() => setSelectedTime('7d')} className="p-2 bg-green-500 text-white rounded-xl">7d</button>
+    <button onClick={() => setSelectedTime('30d')} className="p-2 bg-orange-500 text-white rounded-xl">30d</button>
+    <button onClick={() => setSelectedTime('all')} className="p-2 bg-gray-500 text-white rounded-xl">Todos</button>
+  </div>
 
-      <div className="relative h-80 w-full">
-        <canvas ref={chartRef} />
-      </div>
-    </div>
+  <div className="relative h-64 sm:h-80 md:h-96 w-full">
+    <canvas ref={chartRef} />
+  </div>
+</div>
+
   );
 };

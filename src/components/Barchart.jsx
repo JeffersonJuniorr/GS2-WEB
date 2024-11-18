@@ -106,7 +106,7 @@ const Barchart = () => {
   }, []);
 
   return (
-    <div className="w-full max-w h-96 border">
+    <div className="w-full h-96 sm:h-72 md:h-80 lg:h-96 border">
       <canvas ref={chartRef}></canvas>
     </div>
   );
