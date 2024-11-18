@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from "react-router-dom";
-import Sidebar from "./components/Slidebar.jsx";
+//import Sidebar from "./components/Slidebar.jsx";
 import Login from "./routes/Login.jsx";
 import Cadastrar from "./routes/Cadastrar.jsx";
 import Solucao from "./routes/Solucao.jsx";
@@ -8,6 +8,7 @@ import Home from "./routes/Hone.jsx";
 import Nav from "./components/Nav.jsx";
 import Footer from "./components/Footer.jsx";
 import Error from "./routes/Error.jsx";
+import Sobre from "./routes/Sobre.jsx"
 
 function Modal({ children, onClose }) {
   return (
@@ -32,26 +33,23 @@ function App() {
   const closeModal = () => navigate("/");
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen"> 
       <Nav />
-      <div className="flex h-screen bg-gray-50">
-        <Sidebar />
-        <div className="flex flex-col flex-1">
+      <div className="flex flex-1"> 
+        
+        <main className="flex-1 bg-gray-50">
           <Routes>
-            
             <Route path="/" element={<Home />} />
-            
             <Route path="/solucao" element={<Solucao />} />
-            
-            <Route path="/sobre" element={<div>Sobre Nós (adicione o componente aqui)</div>} />
-            
+            <Route path="/sobre" element={<Sobre />} />
             <Route path="*" element={<Error />} />
           </Routes>
-        </div>
+        </main>
       </div>
       <Footer />
 
-   
+      {/*<Slidebar/>*/}
+      
       {location.pathname === "/login" && (
         <Modal onClose={closeModal}>
           <Login />

@@ -118,6 +118,7 @@ export const Mychart = () => {
           datasets: getData(),
         },
         options: {
+          maintainAspectRatio: false,
           scales: {
             x: {
               title: {

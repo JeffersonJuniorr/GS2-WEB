@@ -1,98 +1,96 @@
+// Home.jsx
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { Pagination, Autoplay } from "swiper/modules";
+import Sobre from "./Sobre";
+
+import imagem1 from "../assets/energia1.jpg";
+import imagem2 from "../assets/energia2.jpg";
+import imagem3 from "../assets/energia3.jpg";
+
+import prototipo1 from "../assets/app1.png"
+import prototipo2 from "../assets/app2.png"
+import prototipo3 from "../assets/app3.png"
 
 function Home() {
   return (
-    <div className="bg-gray-50 p-6">
-      
-      <h1 className="text-4xl font-bold text-center mb-8">Bem-vindo à Nossa Plataforma</h1>
-
+    <div className="relative bg-gray-50">
       {/* Slideshow */}
-      <div className="w-full max-w-4xl mx-auto mb-12">
+      <div className="mb-12">
         <Swiper
           modules={[Pagination, Autoplay]}
           autoplay={{ delay: 3000 }}
           pagination={{ clickable: true }}
-          spaceBetween={20}
+          spaceBetween={0}
           slidesPerView={1}
-          className="rounded-lg shadow-md"
+          className="w-screen"
         >
           <SwiperSlide>
             <img
-              src="https://via.placeholder.com/800x400?text=Imagem+1"
+              src={imagem1}
               alt="Imagem 1"
-              className="w-full h-64 object-cover"
+              className="w-full h-[100vh] object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="https://via.placeholder.com/800x400?text=Imagem+2"
+              src={imagem2}
               alt="Imagem 2"
-              className="w-full h-64 object-cover"
+              className="w-full h-[100vh] object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="https://via.placeholder.com/800x400?text=Imagem+3"
+              src={imagem3}
               alt="Imagem 3"
-              className="w-full h-64 object-cover"
+              className="w-full h-[100vh] object-cover"
             />
           </SwiperSlide>
         </Swiper>
       </div>
 
-      {/* Texto sobre o tema */}
-      <div className="max-w-3xl mx-auto text-center mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Sobre o Tema</h2>
-        <p className="text-gray-700 leading-relaxed">
-          Nossa solução é focada em melhorar a gestão energética para garantir um futuro sustentável. 
-          Aqui você encontrará ferramentas intuitivas e visualizações práticas para acompanhar seus 
-          dados em tempo real e tomar decisões conscientes sobre o consumo energético.
-        </p>
-      </div>
+   
+      <Sobre /> 
 
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {/* Card 1 */}
-        <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
-          <img
-            src="https://via.placeholder.com/300x200?text=Imagem+1"
-            alt="Imagem 1"
-            className="rounded-md mb-4 w-full h-40 object-cover"
-          />
-          <h3 className="text-lg font-semibold mb-2">Título do Card 1</h3>
-          <p className="text-gray-600 text-sm">
-            Descrição breve da solução que será apresentada aqui.
-          </p>
-        </div>
-        {/* Card 2 */}
-        <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
-          <img
-            src="https://via.placeholder.com/300x200?text=Imagem+2"
-            alt="Imagem 2"
-            className="rounded-md mb-4 w-full h-40 object-cover"
-          />
-          <h3 className="text-lg font-semibold mb-2">Título do Card 2</h3>
-          <p className="text-gray-600 text-sm">
-            Outro destaque da solução em desenvolvimento.
-          </p>
-        </div>
-        {/* Card 3 */}
-        <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
-          <img
-            src="https://via.placeholder.com/300x200?text=Imagem+3"
-            alt="Imagem 3"
-            className="rounded-md mb-4 w-full h-40 object-cover"
-          />
-          <h3 className="text-lg font-semibold mb-2">Título do Card 3</h3>
-          <p className="text-gray-600 text-sm">
-            Um terceiro ponto chave para explorar.
-          </p>
-          
+      <div className="flex justify-center px-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-screen-lg justify-items-center">
+          <div className="p-4 w-60">
+            <img
+              src={prototipo1}
+              alt="Imagem 1"
+              className="rounded-3xl mb-4 w-full h-auto object-cover shadow-none"
+            />
+            <h3 className="text-lg font-semibold mb-2">Central de Dispositivos</h3>
+            <p className="text-gray-600 text-sm">
+              Uma Central de Dispositivos cadastrados.
+            </p>
+          </div>
+          <div className="p-4 w-60">
+            <img
+              src={prototipo2}
+              alt="Imagem 2"
+              className="rounded-3xl mb-4 w-full h-auto object-cover shadow-none"
+            />
+            <h3 className="text-lg font-semibold mb-2">Grafico Intuitivo</h3>
+            <p className="text-gray-600 text-sm">
+              Graficos para melhor visualização.
+            </p>
+          </div>
+          <div className="p-4 w-60">
+            <img
+              src={prototipo3}
+              alt="Imagem 3"
+              className="rounded-3xl mb-4 w-full h-auto object-cover shadow-none"
+            />
+            <h3 className="text-lg font-semibold mb-2">Cenários do Dia a Dia</h3>
+            <p className="text-gray-600 text-sm">
+              Consumo detalhado dos seus aparelhos.
+            </p>
+          </div>
         </div>
       </div>
     </div>
