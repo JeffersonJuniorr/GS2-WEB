@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { Pagination, Autoplay } from "swiper/modules";
-import Sobre from "./Sobre";
+import Sobre from "./Sobre.jsx";
 
 import imagem1 from "../assets/energia1.jpg";
 import imagem2 from "../assets/energia2.jpg";

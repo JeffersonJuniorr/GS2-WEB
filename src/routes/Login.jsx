@@ -37,6 +37,7 @@ function Login() {
           setSuccess(true);
           setTimeout(() => {
             navigate('/'); 
+            window.location.reload();
           }, 1500); 
         } else {
           setError('Usuário ou senha incorretos.');
