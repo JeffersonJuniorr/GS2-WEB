@@ -10,10 +10,6 @@ import imagem1 from "../assets/energia1.jpg";
 import imagem2 from "../assets/energia2.jpg";
 import imagem3 from "../assets/energia3.jpg";
 
-import prototipo1 from "../assets/app1.png"
-import prototipo2 from "../assets/app2.png"
-import prototipo3 from "../assets/app3.png"
-
 function Home() {
   return (
     <div className="relative bg-gray-50">
