@@ -21,12 +21,15 @@ function Login() {
       const user = usuarios.find((u) => u.usuario === usuario);
 
       if (user) {
+        // Descriptografar a senha usando a chave
         const senhaDescriptografada = CryptoJS.AES.decrypt(
           user.senha,
           'chave-secreta'
         ).toString(CryptoJS.enc.Utf8);
 
-        if (senhaDescriptografada === senha) {
+        console.log('Senha descriptografada:', senhaDescriptografada);
+
+        if (senhaDescriptografada === senha.trim()) {
           sessionStorage.setItem(
             'user',
             CryptoJS.AES.encrypt(user.usuario, 'chave-secreta').toString()
@@ -48,7 +51,7 @@ function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center bg-gray-500 bg-opacity-50">
+    <div className="min-h-screen flex items-center justify-center bg-gray-500 bg-opacity-50">
       <div className="bg-white bg-opacity-30 backdrop-blur-lg p-8 rounded-lg shadow-lg max-w-md w-full">
         <h2 className="text-xl mb-4 text-center text-gray-800">Login</h2>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}

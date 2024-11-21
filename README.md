@@ -55,22 +55,20 @@ O login utiliza fetch para acessar usuários cadastrados em um servidor local (h
 
 React e React DOM (instalados automaticamente com o Vite):
 
-npm install react react-dom
 React Router DOM:
-
 npm install react-router-dom
-Tailwind CSS (e ferramentas de build associadas):
 
+Tailwind CSS (e ferramentas de build associadas):
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init
+
 Swiper (para carrossel):
-
 npm install swiper
+
 CryptoJS (para criptografia de dados):
-
 npm install crypto-js
-React Icons:
 
+React Icons: 
 npm install react-icons
 
 # Como Executar o Projeto

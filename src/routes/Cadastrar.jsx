@@ -17,9 +17,7 @@ function Cadastrar() {
       return;
     }
 
-    
     const senhaCriptografada = CryptoJS.AES.encrypt(senha, 'chave-secreta').toString();
-    
 
     try {
       const response = await fetch('http://localhost:5000/usuarios', {
@@ -31,7 +29,7 @@ function Cadastrar() {
       });
 
       if (response.ok) {
-        navigate('/login'); 
+        navigate('/login');
       } else {
         setError('Erro ao cadastrar o usuário.');
       }
@@ -41,10 +39,8 @@ function Cadastrar() {
     }
   };
 
-  // min-h-screen
-
   return (
-    <div className="flex items-center justify-center bg-gray-500 bg-opacity-50">
+    <div className="min-h-screen flex items-center justify-center bg-gray-500 bg-opacity-50">
       <div className="bg-white bg-opacity-30 backdrop-blur-lg p-8 rounded-lg shadow-lg max-w-md w-full">
         <h2 className="text-xl mb-4 text-center text-gray-800">Cadastro</h2>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}

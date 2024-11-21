@@ -1,4 +1,3 @@
-// src/routes/Error.jsx
 import React from 'react';
 
 const Error = () => {
