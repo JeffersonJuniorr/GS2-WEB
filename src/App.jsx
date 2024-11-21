@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from
 import Login from "./routes/Login.jsx";
 import Cadastrar from "./routes/Cadastrar.jsx";
 import Solucao from "./routes/Solucao.jsx";
-import Home from "./routes/Hone.jsx";
+import Home from "./routes/Home.jsx";
 import Nav from "./components/Nav.jsx";
 import Footer from "./components/Footer.jsx";
 import Error from "./routes/Error.jsx";
