@@ -59,10 +59,7 @@ const Nav = () => {
         {isAuthenticated ? (
           <button
             onClick={handleLogout}
-            className="block text-center text-xl hover:text-red-400"
-          >
-            Logout
-          </button>
+            className="block text-center text-xl hover:text-red-400">ㅤㅤㅤㅤㅤㅤㅤLogout</button>
         ) : (
           <Link to="/login" onClick={toggleMenu} className="block text-center text-xl hover:text-green-400">Login</Link>
         )}
