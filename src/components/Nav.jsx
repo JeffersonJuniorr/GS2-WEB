@@ -21,7 +21,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="bg-gray-200 bg-opacity-60 backdrop-blur-md px-6 py-4 fixed w-full z-50">
+    <nav className="bg-gray-200 bg-opacity-20 backdrop-blur-xl px-6 py-4 fixed w-full z-50">
       <div className="flex justify-between items-center font-semibold">
         <Link to="/" className="text-xl font-bold">
           EcoView
