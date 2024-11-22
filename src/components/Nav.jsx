@@ -21,7 +21,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="bg-gray-200 bg-opacity-20 backdrop-blur-xl px-6 py-4 fixed w-full z-50">
+    <nav className="bg-gray-200 bg-opacity-20 backdrop-blur-xl px-10 py-4 fixed w-full z-50">
       <div className="flex justify-between items-center font-semibold">
         <Link to="/" className="text-xl font-bold">
           EcoView
@@ -33,7 +33,7 @@ const Nav = () => {
           </button>
         </div>
 
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex gap-11">
           <Link to="/" className="hover:text-green-400 transition-colors">Home</Link>
           <Link to="/solucao" className="hover:text-green-400 transition-colors">Solução</Link>
           <a href="#sobre" className="hover:text-green-400 transition-colors">Sobre</a>
